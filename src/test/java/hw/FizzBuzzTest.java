@@ -5,7 +5,7 @@ import static org.junit.Assert.*;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import java.util.Arrays;
+import java.util.*;
 
 public class FizzBuzzTest {
 
@@ -25,7 +25,7 @@ public class FizzBuzzTest {
   public void testFizzBuzzArray() throws Exception {
     assertNotNull(fixture);
     
-    assertEquals(Main.fizzBuzzArray(-10),null);
+    assertEquals(Main.fizzBuzzList(-10),null);
   }
 
 
@@ -33,7 +33,7 @@ public class FizzBuzzTest {
   public void testFizzBuzzArrayTwo() throws Exception{
     assertNotNull(fixture);
 
-   assertEquals(Main.fizzBuzzArray(-1),null);
+   assertEquals(Main.fizzBuzzList(-1),null);
   }
 
 
@@ -41,30 +41,35 @@ public class FizzBuzzTest {
   public void testFizzBuzzArrayThree() throws Exception {     //TODO: Find a way to do this with DRY in mind
     assertNotNull(fixture);
    
-    assertEquals(Main.fizzBuzzArray(0),null);
+    assertEquals(Main.fizzBuzzList(0),null);
   }
 
 
  @Test
   public void testFizzBuzzArrayFour() {
     assertNotNull(fixture);
-    String[] testString = {"1","2","Fizz","4","Buzz","Fizz","7","8","Fizz","Buzz","11","Fizz","13","14","Fizz Buzz","16","17"};
-    assert(Arrays.equals(Main.fizzBuzzArray(1),Arrays.copyOfRange(testString,0,1)));
+    List<String> testString = new ArrayList<String>(Arrays.asList( "1","2","Fizz","4","Buzz","Fizz","7","8","Fizz","Buzz","11","Fizz","13","14","Fizz Buzz","16","17"));
+    for(int i = 0; i <1;i++){
+    assertEquals(testString.get(i),Main.fizzBuzzList(1).get(i));
+    }
   }
-
 
  @Test
   public void testFizzBuzzArrayFive() {
     assertNotNull(fixture);
-    String[] testString = {"1","2","Fizz","4","Buzz","Fizz","7","8","Fizz","Buzz","11","Fizz","13","14","Fizz Buzz","16","17"};
-    assert(Arrays.equals(Main.fizzBuzzArray(7),Arrays.copyOfRange(testString,0,7)));
+    List<String> testString = new ArrayList<String>(Arrays.asList( "1","2","Fizz","4","Buzz","Fizz","7","8","Fizz","Buzz","11","Fizz","13","14","Fizz Buzz","16","17"));
+    for(int i = 0; i <7;i++){
+    assertEquals(testString.get(i),Main.fizzBuzzList(7).get(i));
+    }
   }
-
-
- @Test
-  public void testFizzBuzzArraySix()  {
+  
+   @Test
+  public void testFizzBuzzArraySix() {
     assertNotNull(fixture);
-    final String[] testString = {"1","2","Fizz","4","Buzz","Fizz","7","8","Fizz","Buzz","11","Fizz","13","14","Fizz Buzz","16","17"};
-    assert(Arrays.equals(Main.fizzBuzzArray(17),Arrays.copyOfRange(testString,0,17)));
+    List<String> testString = new ArrayList<String>(Arrays.asList( "1","2","Fizz","4","Buzz","Fizz","7","8","Fizz","Buzz","11","Fizz","13","14","Fizz Buzz","16","17"));
+    for(int i = 0; i <17;i++){
+    assertEquals(testString.get(i),Main.fizzBuzzList(17).get(i));
+    }
   }
+
 }
